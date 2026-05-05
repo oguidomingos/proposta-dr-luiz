@@ -1068,6 +1068,601 @@
         .mb-lg {
             margin-bottom: var(--spacing-lg);
         }
+
+        /* ========== ENHANCED LP PREVIEW STYLES ========== */
+        @keyframes browserGlow {
+            0%, 100% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 191, 165, 0.08); }
+            50% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 191, 165, 0.18); }
+        }
+
+        .browser-mockup-enhanced {
+            background: rgba(21, 32, 43, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: var(--spacing-lg);
+            animation: browserGlow 4s ease-in-out infinite;
+        }
+
+        .lp-navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: rgba(13, 27, 42, 0.95);
+            border-bottom: 1px solid var(--color-dark-border);
+        }
+
+        .lp-navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lp-navbar-logo .logo-mark {
+            width: 28px;
+            height: 28px;
+            background: var(--color-pulso);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lp-navbar-logo span {
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+        }
+
+        .lp-navbar-menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .lp-navbar-menu a {
+            color: var(--color-areia);
+            text-decoration: none;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            letter-spacing: 0.02em;
+        }
+
+        .lp-navbar-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .lp-navbar-hamburger span {
+            width: 20px;
+            height: 2px;
+            background: var(--color-areia);
+            border-radius: 2px;
+        }
+
+        .lp-hero-enhanced {
+            position: relative;
+            background: linear-gradient(160deg, #0a1628 0%, #0f2b3d 35%, #0a2a3a 60%, #0D1B2A 100%);
+            padding: 80px 30px 60px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .lp-hero-enhanced::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 191, 165, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .lp-hero-enhanced::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 150, 136, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .lp-hero-enhanced .hero-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .lp-hero-enhanced .hero-tagline {
+            display: inline-block;
+            background: rgba(0, 191, 165, 0.15);
+            border: 1px solid rgba(0, 191, 165, 0.3);
+            color: var(--color-pulso);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .lp-hero-enhanced h3 {
+            color: var(--color-white);
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+            line-height: 1.15;
+        }
+
+        .lp-hero-enhanced .hero-sub {
+            color: var(--color-areia);
+            opacity: 0.8;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .lp-hero-enhanced .hero-location-line {
+            color: var(--color-areia);
+            opacity: 0.6;
+            font-size: 0.8rem;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .lp-hero-enhanced .cta-button-preview {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-pulso) 0%, var(--color-pulso-dark) 100%);
+            color: var(--color-white);
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0, 191, 165, 0.35);
+        }
+
+        .lp-trust-enhanced {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 16px 20px;
+            background: rgba(0, 191, 165, 0.06);
+            border-top: 1px solid rgba(0, 191, 165, 0.15);
+            border-bottom: 1px solid rgba(0, 191, 165, 0.15);
+        }
+
+        .lp-trust-item {
+            text-align: center;
+        }
+
+        .lp-trust-item .trust-value {
+            color: var(--color-pulso);
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .lp-trust-item .trust-label {
+            color: var(--color-areia);
+            font-size: 0.65rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .lp-specialties-enhanced {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 20px;
+            background: var(--color-noite);
+        }
+
+        .lp-spec-card {
+            background: rgba(21, 32, 43, 0.8);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 10px;
+            padding: 20px 14px;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .lp-spec-card:hover {
+            border-color: var(--color-pulso);
+        }
+
+        .lp-spec-card .spec-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lp-spec-card h4 {
+            color: var(--color-pulso);
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        .lp-spec-card p {
+            font-size: 0.7rem;
+            color: var(--color-areia);
+            opacity: 0.7;
+            line-height: 1.3;
+        }
+
+        .lp-testimonial {
+            background: rgba(21, 32, 43, 0.5);
+            padding: 20px;
+            border-top: 1px solid var(--color-dark-border);
+        }
+
+        .lp-testimonial-inner {
+            background: rgba(13, 27, 42, 0.6);
+            border-left: 3px solid var(--color-pulso);
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+
+        .lp-testimonial-inner p {
+            color: var(--color-areia);
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .lp-testimonial-inner .testimonial-author {
+            color: var(--color-pulso);
+            font-size: 0.7rem;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .lp-whatsapp-float {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 5;
+        }
+
+        .lp-bottom-cta {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 191, 165, 0.05);
+            border-top: 1px solid var(--color-dark-border);
+            position: relative;
+        }
+
+        .lp-bottom-cta p {
+            color: var(--color-areia);
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+
+        .lp-bottom-cta .cta-button-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: var(--color-white);
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* ========== ENHANCED POSTS PREVIEW STYLES ========== */
+        .phone-frame {
+            max-width: 900px;
+            margin: var(--spacing-lg) auto 0;
+            position: relative;
+        }
+
+        .posts-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .ig-post {
+            background: #1a1a2e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .ig-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .ig-header {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            gap: 10px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .ig-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-pulso), var(--color-pulso-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ig-avatar svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .ig-username {
+            flex: 1;
+            color: var(--color-white);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .ig-menu {
+            color: rgba(255,255,255,0.5);
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .ig-body {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 24px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ig-actions {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            gap: 14px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .ig-actions svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: rgba(255,255,255,0.8);
+            stroke-width: 1.8;
+            cursor: pointer;
+        }
+
+        .ig-actions .ig-bookmark {
+            margin-left: auto;
+        }
+
+        /* Post 1 - Apresentacao */
+        .ig-body-1 {
+            background: linear-gradient(160deg, #0D1B2A 0%, #15202B 100%);
+        }
+
+        .ig-body-1 .doc-icon {
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        .ig-body-1 h4 {
+            font-family: var(--font-heading);
+            color: var(--color-white);
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+
+        .ig-body-1 .tagline {
+            color: var(--color-areia);
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .ig-body-1 .brand-bar {
+            width: 50px;
+            height: 3px;
+            background: var(--color-pulso);
+            border-radius: 2px;
+        }
+
+        /* Post 2 - Educativo */
+        .ig-body-2 {
+            background: linear-gradient(160deg, var(--color-pulso) 0%, #007a6a 100%);
+        }
+
+        .ig-body-2 .list-icon {
+            margin-bottom: 12px;
+            opacity: 0.25;
+        }
+
+        .ig-body-2 .big-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            color: var(--color-white);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .ig-body-2 .big-label {
+            color: var(--color-white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .ig-body-2 p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.8rem;
+        }
+
+        /* Post 3 - Especialidade */
+        .ig-body-3 {
+            background: var(--color-dark-card);
+            flex-direction: row;
+            text-align: left;
+            padding: 0;
+        }
+
+        .ig-body-3 .split-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 191, 165, 0.06);
+            border-right: 1px solid var(--color-dark-border);
+        }
+
+        .ig-body-3 .split-right {
+            flex: 1;
+            padding: 24px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ig-body-3 .split-right h4 {
+            font-family: var(--font-heading);
+            color: var(--color-pulso);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .ig-body-3 .split-right p {
+            color: var(--color-areia);
+            font-size: 0.78rem;
+            opacity: 0.8;
+            margin-bottom: 14px;
+            line-height: 1.4;
+        }
+
+        .ig-body-3 .split-right .cta-link {
+            color: var(--color-pulso);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Post 4 - Autoridade */
+        .ig-body-4 {
+            background: linear-gradient(160deg, #15202B 0%, #0D1B2A 100%);
+            border-top: 3px solid transparent;
+            border-image: linear-gradient(90deg, #c9a84c, var(--color-pulso)) 1;
+        }
+
+        .ig-body-4 .big-num {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--color-white);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .ig-body-4 .big-num span {
+            color: var(--color-pulso);
+            font-size: 2rem;
+        }
+
+        .ig-body-4 h4 {
+            color: var(--color-white);
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        .ig-body-4 .timeline-dots {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 10px;
+        }
+
+        .ig-body-4 .timeline-dots .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-pulso);
+            flex-shrink: 0;
+        }
+
+        .ig-body-4 .timeline-dots .line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-pulso), rgba(0,191,165,0.3));
+        }
+
+        .ig-body-4 .timeline-dots .label {
+            color: var(--color-areia);
+            font-size: 0.7rem;
+            margin-left: 6px;
+            opacity: 0.7;
+        }
+
+        .ig-body-4 .timeline-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .ig-body-4 .timeline-labels span {
+            font-size: 0.65rem;
+            color: var(--color-areia);
+            opacity: 0.6;
+        }
+
+        /* Responsive for enhanced sections */
+        @media (max-width: 768px) {
+            .lp-navbar-menu { display: none; }
+            .lp-navbar-hamburger { display: flex; }
+            .lp-trust-enhanced { grid-template-columns: 1fr; gap: 8px; }
+            .lp-specialties-enhanced { grid-template-columns: 1fr; }
+            .lp-hero-enhanced { padding: 50px 20px 40px; }
+            .lp-hero-enhanced h3 { font-size: 1.4rem; }
+            .posts-grid-enhanced { grid-template-columns: 1fr; }
+            .ig-body { min-height: 280px; }
+            .ig-body-3 { flex-direction: column; }
+            .ig-body-3 .split-left { border-right: none; border-bottom: 1px solid var(--color-dark-border); padding: 16px; }
+        }
+
+        @media (min-width: 769px) {
+            .ig-body { min-height: 350px; }
+        }
     </style>
 </head>
 <body>
@@ -1384,9 +1979,10 @@
         <div class="container">
             <div class="fade-in">
                 <h2 class="preview-section-title">Preview da Sua Landing Page</h2>
-                <p class="preview-section-subtitle">Veja como será sua presença online</p>
+                <p class="preview-section-subtitle">Veja como sera sua presenca online</p>
 
-                <div class="browser-mockup">
+                <div class="browser-mockup-enhanced">
+                    <!-- Browser Chrome -->
                     <div class="browser-chrome">
                         <div class="browser-dots">
                             <div class="browser-dot browser-dot-red"></div>
@@ -1396,35 +1992,111 @@
                         <div class="browser-url">drluizsarmanho.com.br</div>
                     </div>
 
-                    <div class="browser-content">
-                        <div class="lp-hero">
-                            <h3>Dr. Luiz Sarmanho — Ortopedista Especialista em Quadril e Dor</h3>
-                            <p>Zona Sul, Brasília/DF</p>
+                    <!-- LP Navbar -->
+                    <div class="lp-navbar">
+                        <div class="lp-navbar-logo">
+                            <div class="logo-mark">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                            </div>
+                            <span>Dr. Luiz Sarmanho</span>
+                        </div>
+                        <div class="lp-navbar-menu">
+                            <a href="#">Sobre</a>
+                            <a href="#">Especialidades</a>
+                            <a href="#">Convênios</a>
+                            <a href="#">Contato</a>
+                        </div>
+                        <div class="lp-navbar-hamburger">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <!-- LP Hero with dramatic gradient -->
+                    <div class="lp-hero-enhanced">
+                        <div class="hero-inner">
+                            <div class="hero-tagline">Ortopedia | Quadril | Dor</div>
+                            <h3>Dr. Luiz Sarmanho</h3>
+                            <p class="hero-sub">Ortopedista Especialista em Quadril e Dor</p>
+                            <p class="hero-location-line">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                Clinica Unique — Zona Sul, Brasilia/DF
+                            </p>
                             <a href="#" class="cta-button-preview">Agende Sua Consulta</a>
                         </div>
+                    </div>
 
-                        <div class="lp-trust">
-                            10+ Anos de Experiência | Clínica Unique | Convênio AMHP
+                    <!-- Trust bar with individual stats -->
+                    <div class="lp-trust-enhanced">
+                        <div class="lp-trust-item">
+                            <span class="trust-value">10+</span>
+                            <span class="trust-label">Anos de Experiencia</span>
                         </div>
-
-                        <div class="lp-specialties">
-                            <div class="lp-specialty-card">
-                                <h4>Ortopedia Geral</h4>
-                                <p>Atendimento completo para todas as idades</p>
-                            </div>
-                            <div class="lp-specialty-card">
-                                <h4>Especialista em Quadril</h4>
-                                <p>Tratamentos avançados e minimamente invasivos</p>
-                            </div>
-                            <div class="lp-specialty-card">
-                                <h4>Intervenção e Dor</h4>
-                                <p>Alívio eficaz e duradouro da dor</p>
-                            </div>
+                        <div class="lp-trust-item">
+                            <span class="trust-value">HRT</span>
+                            <span class="trust-label">Hospital Regional</span>
                         </div>
+                        <div class="lp-trust-item">
+                            <span class="trust-value">AMHP</span>
+                            <span class="trust-label">Convenio aceito</span>
+                        </div>
+                    </div>
 
-                        <div class="lp-cta">
-                            <p>Pronto para resolver seu problema?</p>
-                            <a href="#" class="cta-button-preview">WhatsApp: Agende Agora</a>
+                    <!-- Specialties with inline SVG icons -->
+                    <div class="lp-specialties-enhanced">
+                        <div class="lp-spec-card">
+                            <div class="spec-icon">
+                                <svg width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="var(--color-pulso)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M24 6c-3 0-6 2-7 5s-1 8 0 12c1 3 3 5 7 5s6-2 7-5 1-8 0-12-4-5-7-5z"/>
+                                    <path d="M17 28c-2 2-4 5-4 8s1 6 4 6"/>
+                                    <path d="M31 28c2 2 4 5 4 8s-1 6-4 6"/>
+                                    <circle cx="24" cy="16" r="2"/>
+                                </svg>
+                            </div>
+                            <h4>Ortopedia Geral</h4>
+                            <p>Atendimento completo para todas as idades</p>
+                        </div>
+                        <div class="lp-spec-card">
+                            <div class="spec-icon">
+                                <svg width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="var(--color-pulso)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="24" cy="18" r="8"/>
+                                    <path d="M16 18c0 0-2 12-2 16s2 8 10 8 10-4 10-8-2-16-2-16"/>
+                                    <circle cx="24" cy="18" r="3"/>
+                                    <path d="M20 30h8"/>
+                                </svg>
+                            </div>
+                            <h4>Especialista em Quadril</h4>
+                            <p>Tratamentos avancados e minimamente invasivos</p>
+                        </div>
+                        <div class="lp-spec-card">
+                            <div class="spec-icon">
+                                <svg width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="var(--color-pulso)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 24h8l4-8 4 16 4-12 4 8 4-4h12"/>
+                                    <circle cx="38" cy="24" r="4" fill="rgba(0,191,165,0.2)"/>
+                                </svg>
+                            </div>
+                            <h4>Intervencao e Dor</h4>
+                            <p>Alivio eficaz e duradouro da dor</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial section -->
+                    <div class="lp-testimonial">
+                        <div class="lp-testimonial-inner">
+                            <p>"Atendimento excepcional. Dr. Luiz explicou tudo com clareza e resolveu minha dor no quadril."</p>
+                            <span class="testimonial-author">Paciente da Clinica Unique</span>
+                        </div>
+                    </div>
+
+                    <!-- Bottom CTA with WhatsApp -->
+                    <div class="lp-bottom-cta">
+                        <p>Pronto para resolver seu problema?</p>
+                        <a href="#" class="cta-button-whatsapp">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Agende pelo WhatsApp
+                        </a>
+                        <!-- Floating WhatsApp button -->
+                        <div class="lp-whatsapp-float">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         </div>
                     </div>
                 </div>
@@ -1437,26 +2109,144 @@
         <div class="container">
             <div class="fade-in">
                 <h2 class="preview-section-title">Preview dos Posts Iniciais</h2>
-                <p class="preview-section-subtitle">12 posts e stories incluídos no plano Essencial</p>
+                <p class="preview-section-subtitle">12 posts e stories incluidos no plano Essencial</p>
 
-                <div class="posts-grid">
-                    <div class="post-card post-card-1">
-                        <h4>Conheça o Dr. Luiz Sarmanho</h4>
-                        <p>Ortopedista | Especialista em Quadril e Dor</p>
-                    </div>
+                <div class="phone-frame">
+                    <div class="posts-grid-enhanced">
 
-                    <div class="post-card post-card-2">
-                        <h4>5 sinais de que você precisa consultar um ortopedista</h4>
-                    </div>
+                        <!-- Post 1: Apresentacao -->
+                        <div class="ig-post">
+                            <div class="ig-header">
+                                <div class="ig-avatar">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <span class="ig-username">dr.luizsarmanho</span>
+                                <span class="ig-menu">...</span>
+                            </div>
+                            <div class="ig-body ig-body-1">
+                                <div class="doc-icon">
+                                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--color-pulso)" stroke-width="1" opacity="0.3">
+                                        <path d="M32 8c-4 0-7 3-7 7v2h-4v10h22V17h-4v-2c0-4-3-7-7-7z"/>
+                                        <circle cx="32" cy="28" r="12" stroke-width="1.5"/>
+                                        <path d="M32 22v12M26 28h12"/>
+                                        <path d="M20 40c0 8 5 16 12 16s12-8 12-16" stroke-width="1"/>
+                                    </svg>
+                                </div>
+                                <h4>Dr. Luiz Sarmanho</h4>
+                                <p class="tagline">Ortopedista | Quadril | Dor</p>
+                                <div class="brand-bar"></div>
+                            </div>
+                            <div class="ig-actions">
+                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                                <svg class="ig-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+                            </div>
+                        </div>
 
-                    <div class="post-card post-card-3">
-                        <h4>Dor no quadril?</h4>
-                        <p>Tratamentos minimamente invasivos para sua qualidade de vida</p>
-                    </div>
+                        <!-- Post 2: Educativo -->
+                        <div class="ig-post">
+                            <div class="ig-header">
+                                <div class="ig-avatar">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <span class="ig-username">dr.luizsarmanho</span>
+                                <span class="ig-menu">...</span>
+                            </div>
+                            <div class="ig-body ig-body-2">
+                                <div class="list-icon">
+                                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="white" stroke-width="1.2" opacity="0.25">
+                                        <rect x="8" y="6" width="40" height="44" rx="4"/>
+                                        <path d="M16 18h24M16 26h24M16 34h18M16 42h12"/>
+                                        <circle cx="12" cy="18" r="2" fill="white"/>
+                                        <circle cx="12" cy="26" r="2" fill="white"/>
+                                        <circle cx="12" cy="34" r="2" fill="white"/>
+                                        <circle cx="12" cy="42" r="2" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="big-number">5 sinais</div>
+                                <div class="big-label">de que voce precisa de um ortopedista</div>
+                                <p>Deslize para conferir</p>
+                            </div>
+                            <div class="ig-actions">
+                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                                <svg class="ig-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+                            </div>
+                        </div>
 
-                    <div class="post-card post-card-4">
-                        <h4>10+ anos cuidando de pacientes</h4>
-                        <p>Do HRT à Clínica Unique — experiência que faz a diferença</p>
+                        <!-- Post 3: Especialidade (split layout) -->
+                        <div class="ig-post">
+                            <div class="ig-header">
+                                <div class="ig-avatar">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <span class="ig-username">dr.luizsarmanho</span>
+                                <span class="ig-menu">...</span>
+                            </div>
+                            <div class="ig-body ig-body-3">
+                                <div class="split-left">
+                                    <svg width="80" height="100" viewBox="0 0 80 100" fill="none" stroke="var(--color-pulso)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <!-- Hip joint illustration -->
+                                        <ellipse cx="40" cy="30" rx="20" ry="14" opacity="0.4"/>
+                                        <circle cx="40" cy="30" r="8"/>
+                                        <circle cx="40" cy="30" r="3" fill="rgba(0,191,165,0.3)"/>
+                                        <path d="M28 40c-6 10-10 25-10 40" stroke-width="2"/>
+                                        <path d="M52 40c6 10 10 25 10 40" stroke-width="2"/>
+                                        <path d="M34 44c-2 8-4 18-2 28"/>
+                                        <path d="M46 44c2 8 4 18 2 28"/>
+                                        <!-- Pelvis outline -->
+                                        <path d="M10 20c8-12 20-16 30-16s22 4 30 16" opacity="0.3" stroke-width="1"/>
+                                    </svg>
+                                </div>
+                                <div class="split-right">
+                                    <h4>Dor no quadril?</h4>
+                                    <p>Tratamentos minimamente invasivos para sua qualidade de vida</p>
+                                    <span class="cta-link">Saiba mais &rarr;</span>
+                                </div>
+                            </div>
+                            <div class="ig-actions">
+                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                                <svg class="ig-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+                            </div>
+                        </div>
+
+                        <!-- Post 4: Autoridade -->
+                        <div class="ig-post">
+                            <div class="ig-header">
+                                <div class="ig-avatar">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <span class="ig-username">dr.luizsarmanho</span>
+                                <span class="ig-menu">...</span>
+                            </div>
+                            <div class="ig-body ig-body-4">
+                                <div class="big-num">10<span>+</span></div>
+                                <h4>anos cuidando de pacientes</h4>
+                                <div class="timeline-dots">
+                                    <span class="dot"></span>
+                                    <span class="line"></span>
+                                    <span class="dot"></span>
+                                    <span class="line"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="timeline-labels">
+                                    <span>HRT</span>
+                                    <span>Experiencia</span>
+                                    <span>Unique</span>
+                                </div>
+                            </div>
+                            <div class="ig-actions">
+                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                                <svg class="ig-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
