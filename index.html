@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Personalizada — Dr. Luiz Sarmanho | Pulso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-noite: #0D1B2A;
+            --color-pulso: #00BFA5;
+            --color-areia: #F0E9DC;
+            --color-white: #FFFFFF;
+            --color-pulso-dark: #009688;
+            --color-dark-card: #15202B;
+            --color-dark-border: #2A3F54;
+
+            --font-heading: 'DM Serif Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-noite);
+            color: var(--color-areia);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: var(--spacing-md);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Section */
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+
+        section.compact {
+            min-height: auto;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--color-noite) 0%, #1a2332 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 191, 165, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) translateY(0); opacity: 0.5; }
+            50% { transform: scale(1.2) translateY(-20px); opacity: 0.8; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            color: var(--color-pulso);
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+        }
+
+        .hero-title {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-specialty {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--color-areia);
+            margin-bottom: var(--spacing-xs);
+            opacity: 0.9;
+        }
+
+        .hero-location {
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            color: var(--color-areia);
+            opacity: 0.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-branding {
+            position: absolute;
+            bottom: var(--spacing-md);
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.875rem;
+            color: var(--color-pulso);
+            letter-spacing: 0.3em;
+            font-weight: 700;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(21, 32, 43, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 16px;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-pulso);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--color-pulso);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(0, 191, 165, 0.2);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + var(--spacing-md));
+            background: linear-gradient(180deg, var(--color-pulso) 0%, transparent 100%);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        /* Challenge Section */
+        .challenge-title {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--color-white);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-style: italic;
+        }
+
+        .challenge-grid .card {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .challenge-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        /* Score Circle */
+        .score-container {
+            text-align: center;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .score-circle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .score-circle svg {
+            transform: rotate(-90deg);
+        }
+
+        .score-circle-bg {
+            fill: none;
+            stroke: var(--color-dark-border);
+            stroke-width: 12;
+        }
+
+        .score-circle-fill {
+            fill: none;
+            stroke: var(--color-pulso);
+            stroke-width: 12;
+            stroke-linecap: round;
+            stroke-dasharray: 565.48;
+            stroke-dashoffset: 509;
+            transition: stroke-dashoffset 2s ease;
+        }
+
+        .score-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            font-family: var(--font-heading);
+            color: var(--color-white);
+        }
+
+        .score-label {
+            font-size: 1.125rem;
+            color: var(--color-areia);
+            opacity: 0.7;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .column-header {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .column-absent {
+            color: #ff6b6b;
+        }
+
+        .column-present {
+            color: var(--color-pulso);
+        }
+
+        .column-list {
+            list-style: none;
+        }
+
+        .column-list li {
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
+            border-left: 3px solid currentColor;
+            padding-left: var(--spacing-md);
+        }
+
+        /* Opportunities */
+        .opportunity-card {
+            background: rgba(21, 32, 43, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 16px;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: flex-start;
+        }
+
+        .opportunity-number {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            color: var(--color-pulso);
+            line-height: 1;
+            flex-shrink: 0;
+            opacity: 0.5;
+        }
+
+        .opportunity-content {
+            flex: 1;
+        }
+
+        /* Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .metric-card {
+            text-align: center;
+            background: rgba(0, 191, 165, 0.1);
+            border: 2px solid var(--color-pulso);
+            border-radius: 16px;
+            padding: var(--spacing-md);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            color: var(--color-pulso);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--color-areia);
+            opacity: 0.8;
+        }
+
+        .metric-note {
+            text-align: center;
+            margin-top: var(--spacing-md);
+            font-size: 0.875rem;
+            color: var(--color-pulso);
+            font-style: italic;
+        }
+
+        /* Timeline 90 dias */
+        .phase-timeline {
+            margin-top: var(--spacing-lg);
+        }
+
+        .phase-card {
+            background: rgba(21, 32, 43, 0.6);
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--color-pulso);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .phase-header {
+            font-size: 1.25rem;
+            color: var(--color-pulso);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+        }
+
+        .phase-items {
+            list-style: none;
+            padding-left: var(--spacing-md);
+        }
+
+        .phase-items li {
+            margin-bottom: var(--spacing-xs);
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+
+        .phase-items li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-pulso);
+        }
+
+        /* Deliverables Grid */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .deliverable-card {
+            background: rgba(21, 32, 43, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 16px;
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .deliverable-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-pulso);
+        }
+
+        .deliverable-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Package Section */
+        .package-highlight {
+            background: linear-gradient(135deg, rgba(0, 191, 165, 0.1) 0%, rgba(0, 191, 165, 0.05) 100%);
+            border: 2px solid var(--color-pulso);
+            border-radius: 24px;
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            box-shadow: 0 0 60px rgba(0, 191, 165, 0.3);
+        }
+
+        .package-title {
+            text-align: center;
+            color: var(--color-white);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .package-subtitle {
+            text-align: center;
+            color: var(--color-pulso);
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .package-price {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .price-main {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            color: var(--color-white);
+            display: block;
+        }
+
+        .price-setup {
+            font-size: 1.25rem;
+            color: var(--color-areia);
+            opacity: 0.8;
+            display: block;
+            margin-top: var(--spacing-xs);
+        }
+
+        .package-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .package-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .checkmark {
+            color: var(--color-pulso);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .package-why {
+            background: rgba(13, 27, 42, 0.6);
+            border-radius: 16px;
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .package-why h4 {
+            color: var(--color-pulso);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .package-why ul {
+            list-style: none;
+        }
+
+        .package-why li {
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+
+        .package-why li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-pulso);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            margin-top: var(--spacing-lg);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(21, 32, 43, 0.4);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-dark-border);
+        }
+
+        th {
+            background: rgba(0, 191, 165, 0.1);
+            color: var(--color-white);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        td:first-child {
+            font-weight: 500;
+            color: var(--color-areia);
+        }
+
+        td {
+            text-align: center;
+        }
+
+        .highlight-column {
+            background: rgba(0, 191, 165, 0.05);
+            position: relative;
+        }
+
+        .highlight-column::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--color-pulso);
+        }
+
+        .star {
+            color: var(--color-pulso);
+        }
+
+        /* Guarantee */
+        .guarantee-content {
+            background: rgba(21, 32, 43, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-dark-border);
+            border-radius: 16px;
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        .guarantee-list {
+            list-style: none;
+            margin-top: var(--spacing-md);
+        }
+
+        .guarantee-list li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--color-dark-border);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .guarantee-list li:last-child {
+            border-bottom: none;
+        }
+
+        .guarantee-icon {
+            color: var(--color-pulso);
+            font-size: 1.5rem;
+        }
+
+        /* Next Steps */
+        .steps-timeline {
+            margin-top: var(--spacing-lg);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step-item {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-pulso) 0%, var(--color-pulso-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-white);
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+            padding-top: var(--spacing-sm);
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            color: var(--color-white);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .step-description {
+            color: var(--color-areia);
+            opacity: 0.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(0, 191, 165, 0.1) 0%, rgba(0, 191, 165, 0.05) 100%);
+            border-left: 4px solid var(--color-pulso);
+            border-radius: 12px;
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            font-size: 1.25rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #15202B 0%, var(--color-noite) 100%);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-pulso) 0%, var(--color-pulso-dark) 100%);
+            color: var(--color-white);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: var(--spacing-lg) 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 191, 165, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 191, 165, 0.5);
+        }
+
+        .cta-footer {
+            margin-top: var(--spacing-lg);
+            color: var(--color-areia);
+            opacity: 0.6;
+        }
+
+        .cta-validity {
+            font-size: 0.875rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        .cta-date {
+            font-size: 0.875rem;
+            margin-top: var(--spacing-xs);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                min-height: auto;
+                padding: var(--spacing-lg) 0;
+            }
+
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+
+            .hero-branding {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: var(--spacing-lg);
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: var(--spacing-sm);
+            }
+
+            .package-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utilities */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-accent {
+            color: var(--color-pulso);
+        }
+
+        .mb-lg {
+            margin-bottom: var(--spacing-lg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <p class="hero-subtitle">Proposta Personalizada</p>
+                <h1 class="hero-title">Dr. Luiz Sarmanho</h1>
+                <p class="hero-specialty">Ortopedista | Traumatologista | Especialista em Dor e Quadril</p>
+                <p class="hero-location">Clínica Unique — Zona Sul, Brasília/DF</p>
+            </div>
+            <div class="hero-branding">PULSO</div>
+        </div>
+    </section>
+
+    <!-- Recap Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">O que entendemos da nossa conversa</h2>
+                <div class="timeline-item">
+                    <h3>Nova fase profissional</h3>
+                    <p>Transição do serviço público para o particular, com foco em construir sua própria base de pacientes.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Sócio da Clínica Unique</h3>
+                    <p>Localizada na zona sul de Brasília, estrutura completa com telefonia e convênios estabelecidos.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2 períodos por semana</h3>
+                    <p>Quarta-feira manhã + Quinta-feira tarde. Atende convênio AMHP + particular.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Demanda atual vem 100% da clínica</h3>
+                    <p>Pacientes não buscam especificamente o Dr. Luiz — escolhem a Clínica Unique.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>~7 pacientes em bom dia</h3>
+                    <p>Volume atual com muito espaço para crescimento e construção de agenda própria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="challenge-title">"Hoje, quem agenda não te escolheu — escolheu a clínica."</h2>
+                <div class="grid grid-2 challenge-grid">
+                    <div class="card">
+                        <span class="challenge-icon">❌</span>
+                        <div>
+                            <strong>Sem site pessoal</strong>
+                            <p>Você está invisível no Google quando buscam seu nome.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="challenge-icon">❌</span>
+                        <div>
+                            <strong>Sem Google Meu Negócio</strong>
+                            <p>Invisível no Google Maps — onde pacientes procuram médicos.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="challenge-icon">❌</span>
+                        <div>
+                            <strong>Sem Instagram profissional</strong>
+                            <p>Sem posicionamento digital e presença nas redes sociais.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="challenge-icon">❌</span>
+                        <div>
+                            <strong>Especialização não comunicada</strong>
+                            <p>Expertise em quadril e dor não está posicionada digitalmente.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="challenge-icon">❌</span>
+                        <div>
+                            <strong>10+ anos de experiência</strong>
+                            <p>Toda sua credibilidade no HRT desperdiçada digitalmente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnostic Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">Diagnóstico Digital</h2>
+                <div class="score-container">
+                    <div class="score-circle">
+                        <svg width="200" height="200">
+                            <circle class="score-circle-bg" cx="100" cy="100" r="90"></circle>
+                            <circle class="score-circle-fill" cx="100" cy="100" r="90"></circle>
+                        </svg>
+                        <div class="score-text">1/10</div>
+                    </div>
+                    <p class="score-label">Presença Digital Atual</p>
+                </div>
+
+                <div class="two-column">
+                    <div>
+                        <h3 class="column-header column-absent">Ausente</h3>
+                        <ul class="column-list" style="color: #ff6b6b;">
+                            <li>Site pessoal</li>
+                            <li>Google Meu Negócio</li>
+                            <li>Landing page</li>
+                            <li>Instagram profissional</li>
+                            <li>Google Ads</li>
+                            <li>Meta Ads</li>
+                            <li>Prova social online</li>
+                            <li>SEO local</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="column-header column-present">Presente</h3>
+                        <ul class="column-list" style="color: var(--color-pulso);">
+                            <li>Clínica com telefonia (Unique)</li>
+                            <li>Ampla rede de convênios (AMHP)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opportunities Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">Top 5 Oportunidades que Estão Escapando</h2>
+
+                <div class="opportunity-card">
+                    <div class="opportunity-number">1</div>
+                    <div class="opportunity-content">
+                        <h3>3.000+ buscas mensais</h3>
+                        <p>Pessoas procurando "ortopedista em Brasília" no Google — mas não te encontram.</p>
+                    </div>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="opportunity-number">2</div>
+                    <div class="opportunity-content">
+                        <h3>Google Maps inexistente</h3>
+                        <p>Quando pesquisam no mapa, você simplesmente não existe. Seus concorrentes estão lá.</p>
+                    </div>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="opportunity-number">3</div>
+                    <div class="opportunity-content">
+                        <h3>Convênio AMHP não divulgado</h3>
+                        <p>Ninguém sabe que você aceita esse convênio — perda de pacientes qualificados.</p>
+                    </div>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="opportunity-number">4</div>
+                    <div class="opportunity-content">
+                        <h3>Especialização não comunicada</h3>
+                        <p>Seu diferencial em quadril e dor não está sendo comunicado ao mercado.</p>
+                    </div>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="opportunity-number">5</div>
+                    <div class="opportunity-content">
+                        <h3>10+ anos no HRT desperdiçados</h3>
+                        <p>Toda sua credibilidade e experiência não está gerando confiança online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projections Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">O Que os Números Dizem</h2>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">R$ 7–9</div>
+                        <div class="metric-label">CPL estimado</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">25–35%</div>
+                        <div class="metric-label">Taxa de conversão</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">R$ 28–38</div>
+                        <div class="metric-label">Custo por paciente</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">15-25</div>
+                        <div class="metric-label">Pacientes novos/mês com R$ 2.000</div>
+                    </div>
+                </div>
+
+                <p class="metric-note">Agenda preenchida em 30-60 dias</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 90 Day Plan Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">Seu Plano de Implementação</h2>
+
+                <div class="phase-timeline">
+                    <div class="phase-card">
+                        <div class="phase-header">Fase 1 — Semanas 1-2: Setup</div>
+                        <ul class="phase-items">
+                            <li>Google Meu Negócio otimizado e ativo</li>
+                            <li>Landing Page de alta conversão no ar</li>
+                            <li>CRM implementado para rastreamento de leads</li>
+                            <li>Pixels de rastreamento instalados</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-header">Fase 2 — Semanas 3-4: Ativação</div>
+                        <ul class="phase-items">
+                            <li>Google Ads ativo e gerando leads</li>
+                            <li>Treinamento comercial da equipe</li>
+                            <li>Auditoria de telefonia e atendimento</li>
+                            <li>Primeiros posts e stories no Instagram</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-header">Fase 3 — Semanas 5-12: Otimização</div>
+                        <ul class="phase-items">
+                            <li>Meta Ads ativo (Facebook/Instagram)</li>
+                            <li>Comunicação de procedimentos e especialidades</li>
+                            <li>Relatórios quinzenais com análise de resultados</li>
+                            <li>Reunião mensal de acompanhamento</li>
+                            <li>Ajustes contínuos baseados em performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">O Que Você Recebe</h2>
+
+                <div class="deliverables-grid">
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">📍</div>
+                        <h4>Google Meu Negócio</h4>
+                        <p>Perfil otimizado para aparecer nas buscas locais e no Maps</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">🎯</div>
+                        <h4>Landing Page</h4>
+                        <p>Página de alta conversão focada em agendamentos</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">🚀</div>
+                        <h4>Google Ads</h4>
+                        <p>Campanhas otimizadas para captar pacientes qualificados</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">📞</div>
+                        <h4>Auditoria Comercial</h4>
+                        <p>Análise e treinamento de atendimento e telefonia</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">📊</div>
+                        <h4>Dashboard de Métricas</h4>
+                        <p>Relatórios quinzenais com análise completa</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">💼</div>
+                        <h4>CRM Completo</h4>
+                        <p>Sistema de gestão de leads e automações</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <div class="package-highlight">
+                    <h2 class="package-title">Plano Essencial</h2>
+                    <p class="package-subtitle">Ideal Para Seu Momento</p>
+
+                    <div class="package-price">
+                        <span class="price-main">R$ 3.500/mês</span>
+                        <span class="price-setup">+ R$ 5.500 setup inicial</span>
+                    </div>
+
+                    <div class="package-items">
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>Google Ads gerenciado</span>
+                        </div>
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>Meta Ads (Facebook/Instagram)</span>
+                        </div>
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>2 Landing Pages otimizadas</span>
+                        </div>
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>Google Meu Negócio completo</span>
+                        </div>
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>Relatórios quinzenais + Reunião mensal</span>
+                        </div>
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>12 posts/stories iniciais</span>
+                        </div>
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>CRM + Automações</span>
+                        </div>
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>Auditoria Comercial completa</span>
+                        </div>
+                        <div class="package-item">
+                            <span class="checkmark">✓</span>
+                            <span>Treinamento de Atendimento</span>
+                        </div>
+                    </div>
+
+                    <div class="package-why">
+                        <h4>Por que Essencial?</h4>
+                        <ul>
+                            <li><strong>Começando do zero:</strong> Setup completo incluído — você não precisa de nada além disso</li>
+                            <li><strong>Unique tem telefonia:</strong> Auditoria comercial potencializa sua conversão desde o dia 1</li>
+                            <li><strong>CRM rastreia cada lead:</strong> ROI transparente — você vê exatamente de onde vem cada paciente</li>
+                            <li><strong>12 posts iniciais:</strong> Presença digital sem pressão — você não precisa criar conteúdo imediatamente</li>
+                            <li><strong>Reunião mensal:</strong> Acompanhamento próximo enquanto você constrói sua base</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">Comparativo de Planos</h2>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Starter</th>
+                                <th class="highlight-column">Essencial <span class="star">⭐</span></th>
+                                <th>Crescimento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mensalidade</td>
+                                <td>R$ 2.500</td>
+                                <td class="highlight-column"><strong>R$ 3.500</strong></td>
+                                <td>R$ 5.500</td>
+                            </tr>
+                            <tr>
+                                <td>Setup</td>
+                                <td>R$ 2.500</td>
+                                <td class="highlight-column"><strong>R$ 5.500</strong></td>
+                                <td>R$ 6.500</td>
+                            </tr>
+                            <tr>
+                                <td>Mídia sugerida</td>
+                                <td>R$ 1.500+</td>
+                                <td class="highlight-column"><strong>R$ 2.000+</strong></td>
+                                <td>R$ 2.000+</td>
+                            </tr>
+                            <tr>
+                                <td>Google Ads</td>
+                                <td>✅</td>
+                                <td class="highlight-column">✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Meta Ads</td>
+                                <td>✅</td>
+                                <td class="highlight-column">✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Landing Pages</td>
+                                <td>2</td>
+                                <td class="highlight-column">2</td>
+                                <td>2+</td>
+                            </tr>
+                            <tr>
+                                <td>Google Meu Negócio</td>
+                                <td>✅</td>
+                                <td class="highlight-column">✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Relatórios</td>
+                                <td>Quinzenal</td>
+                                <td class="highlight-column">Quinzenal + Reunião</td>
+                                <td>Mensal executivo</td>
+                            </tr>
+                            <tr>
+                                <td>Social Media</td>
+                                <td>❌</td>
+                                <td class="highlight-column">12 posts iniciais</td>
+                                <td>12 posts/mês + gestão</td>
+                            </tr>
+                            <tr>
+                                <td>CRM</td>
+                                <td>❌</td>
+                                <td class="highlight-column">✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Auditoria Comercial</td>
+                                <td>❌</td>
+                                <td class="highlight-column">✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Treinamento</td>
+                                <td>❌</td>
+                                <td class="highlight-column">✅</td>
+                                <td>✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">Nossa Garantia</h2>
+
+                <div class="guarantee-content">
+                    <ul class="guarantee-list">
+                        <li>
+                            <span class="guarantee-icon">🤝</span>
+                            <span><strong>Contrato mínimo:</strong> 6 meses para construir resultado consistente</span>
+                        </li>
+                        <li>
+                            <span class="guarantee-icon">⚡</span>
+                            <span><strong>Setup completo:</strong> Garantia de implementação total em 90 dias ou extensão sem custo</span>
+                        </li>
+                        <li>
+                            <span class="guarantee-icon">📊</span>
+                            <span><strong>Transparência total:</strong> Relatórios quinzenais detalhados com todas as métricas</span>
+                        </li>
+                        <li>
+                            <span class="guarantee-icon">🔄</span>
+                            <span><strong>Cancelamento flexível:</strong> Após período mínimo, com 30 dias de aviso prévio</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps Section -->
+    <section class="compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="text-center">Quando Começamos?</h2>
+
+                <div class="steps-timeline">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Hoje</div>
+                            <div class="step-description">Alinhar pacote, condições e assinar contrato</div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Esta semana</div>
+                            <div class="step-description">Onboarding completo — coleta de informações, materiais e acessos</div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Semanas 1-2</div>
+                            <div class="step-description">Google Meu Negócio otimizado + Landing Page no ar + CRM configurado</div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Semana 3</div>
+                            <div class="step-description">Google Ads ativo — primeiros leads começam a chegar</div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Semana 4+</div>
+                            <div class="step-description">Otimização contínua, Meta Ads ativo, relatórios e ajustes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    "Em 30 dias, pacientes estarão te buscando pelo nome."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section compact">
+        <div class="container">
+            <div class="fade-in">
+                <h2>Vamos agendar o onboarding?</h2>
+                <a href="#contato" class="cta-button">Começar Agora</a>
+
+                <div class="cta-footer">
+                    <div class="hero-branding" style="position: relative; bottom: auto; left: auto; transform: none; margin: var(--spacing-lg) 0;">PULSO</div>
+                    <p class="cta-validity">Proposta válida por 15 dias</p>
+                    <p class="cta-date">Maio 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate score circle when visible
+        const scoreCircle = document.querySelector('.score-circle');
+        if (scoreCircle) {
+            const scoreObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate the circle (1/10 = 10%)
+                        const circleFill = document.querySelector('.score-circle-fill');
+                        if (circleFill) {
+                            setTimeout(() => {
+                                circleFill.style.strokeDashoffset = '509';
+                            }, 200);
+                        }
+                        scoreObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            scoreObserver.observe(scoreCircle);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
