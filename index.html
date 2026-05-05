@@ -1663,6 +1663,42 @@
         @media (min-width: 769px) {
             .ig-body { min-height: 350px; }
         }
+
+        /* Posts Preview Grid (Simple) */
+        .posts-grid-simple {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .post-image-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .post-image-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .post-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .posts-grid-simple { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -2104,154 +2140,38 @@
         </div>
     </section>
 
-    <!-- Posts Preview Section -->
+    <!-- Posts Preview Section (Updated with Designer Assets) -->
     <section class="compact">
         <div class="container">
             <div class="fade-in">
                 <h2 class="preview-section-title">Preview dos Posts Iniciais</h2>
-                <p class="preview-section-subtitle">12 posts e stories incluidos no plano Essencial</p>
+                <p class="preview-section-subtitle">4 posts criativos incluidos no plano Essencial</p>
 
-                <div class="phone-frame">
-                    <div class="posts-grid-enhanced">
+                <div class="posts-grid-simple">
+                    <!-- Post 1: Apresentação -->
+                    <div class="post-image-card">
+                        <img src="assets/posts/post-01-apresentacao.png" alt="Post 1 - Apresentação" loading="lazy">
+                    </div>
 
-                        <!-- Post 1: Apresentacao -->
-                        <div class="ig-post">
-                            <div class="ig-header">
-                                <div class="ig-avatar">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                </div>
-                                <span class="ig-username">dr.luizsarmanho</span>
-                                <span class="ig-menu">...</span>
-                            </div>
-                            <div class="ig-body ig-body-1">
-                                <div class="doc-icon">
-                                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--color-pulso)" stroke-width="1" opacity="0.3">
-                                        <path d="M32 8c-4 0-7 3-7 7v2h-4v10h22V17h-4v-2c0-4-3-7-7-7z"/>
-                                        <circle cx="32" cy="28" r="12" stroke-width="1.5"/>
-                                        <path d="M32 22v12M26 28h12"/>
-                                        <path d="M20 40c0 8 5 16 12 16s12-8 12-16" stroke-width="1"/>
-                                    </svg>
-                                </div>
-                                <h4>Dr. Luiz Sarmanho</h4>
-                                <p class="tagline">Ortopedista | Quadril | Dor</p>
-                                <div class="brand-bar"></div>
-                            </div>
-                            <div class="ig-actions">
-                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                                <svg class="ig-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-                            </div>
-                        </div>
+                    <!-- Post 2: Educativo -->
+                    <div class="post-image-card">
+                        <img src="assets/posts/post-02-educativo.png" alt="Post 2 - Educativo" loading="lazy">
+                    </div>
 
-                        <!-- Post 2: Educativo -->
-                        <div class="ig-post">
-                            <div class="ig-header">
-                                <div class="ig-avatar">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                </div>
-                                <span class="ig-username">dr.luizsarmanho</span>
-                                <span class="ig-menu">...</span>
-                            </div>
-                            <div class="ig-body ig-body-2">
-                                <div class="list-icon">
-                                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="white" stroke-width="1.2" opacity="0.25">
-                                        <rect x="8" y="6" width="40" height="44" rx="4"/>
-                                        <path d="M16 18h24M16 26h24M16 34h18M16 42h12"/>
-                                        <circle cx="12" cy="18" r="2" fill="white"/>
-                                        <circle cx="12" cy="26" r="2" fill="white"/>
-                                        <circle cx="12" cy="34" r="2" fill="white"/>
-                                        <circle cx="12" cy="42" r="2" fill="white"/>
-                                    </svg>
-                                </div>
-                                <div class="big-number">5 sinais</div>
-                                <div class="big-label">de que voce precisa de um ortopedista</div>
-                                <p>Deslize para conferir</p>
-                            </div>
-                            <div class="ig-actions">
-                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                                <svg class="ig-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-                            </div>
-                        </div>
+                    <!-- Post 3: Especialidade -->
+                    <div class="post-image-card">
+                        <img src="assets/posts/post-03-especialidade.png" alt="Post 3 - Especialidade" loading="lazy">
+                    </div>
 
-                        <!-- Post 3: Especialidade (split layout) -->
-                        <div class="ig-post">
-                            <div class="ig-header">
-                                <div class="ig-avatar">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                </div>
-                                <span class="ig-username">dr.luizsarmanho</span>
-                                <span class="ig-menu">...</span>
-                            </div>
-                            <div class="ig-body ig-body-3">
-                                <div class="split-left">
-                                    <svg width="80" height="100" viewBox="0 0 80 100" fill="none" stroke="var(--color-pulso)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                                        <!-- Hip joint illustration -->
-                                        <ellipse cx="40" cy="30" rx="20" ry="14" opacity="0.4"/>
-                                        <circle cx="40" cy="30" r="8"/>
-                                        <circle cx="40" cy="30" r="3" fill="rgba(0,191,165,0.3)"/>
-                                        <path d="M28 40c-6 10-10 25-10 40" stroke-width="2"/>
-                                        <path d="M52 40c6 10 10 25 10 40" stroke-width="2"/>
-                                        <path d="M34 44c-2 8-4 18-2 28"/>
-                                        <path d="M46 44c2 8 4 18 2 28"/>
-                                        <!-- Pelvis outline -->
-                                        <path d="M10 20c8-12 20-16 30-16s22 4 30 16" opacity="0.3" stroke-width="1"/>
-                                    </svg>
-                                </div>
-                                <div class="split-right">
-                                    <h4>Dor no quadril?</h4>
-                                    <p>Tratamentos minimamente invasivos para sua qualidade de vida</p>
-                                    <span class="cta-link">Saiba mais &rarr;</span>
-                                </div>
-                            </div>
-                            <div class="ig-actions">
-                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                                <svg class="ig-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-                            </div>
-                        </div>
-
-                        <!-- Post 4: Autoridade -->
-                        <div class="ig-post">
-                            <div class="ig-header">
-                                <div class="ig-avatar">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                </div>
-                                <span class="ig-username">dr.luizsarmanho</span>
-                                <span class="ig-menu">...</span>
-                            </div>
-                            <div class="ig-body ig-body-4">
-                                <div class="big-num">10<span>+</span></div>
-                                <h4>anos cuidando de pacientes</h4>
-                                <div class="timeline-dots">
-                                    <span class="dot"></span>
-                                    <span class="line"></span>
-                                    <span class="dot"></span>
-                                    <span class="line"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="timeline-labels">
-                                    <span>HRT</span>
-                                    <span>Experiencia</span>
-                                    <span>Unique</span>
-                                </div>
-                            </div>
-                            <div class="ig-actions">
-                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                                <svg class="ig-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-                            </div>
-                        </div>
-
+                    <!-- Post 4: Autoridade -->
+                    <div class="post-image-card">
+                        <img src="assets/posts/post-04-autoridade.png" alt="Post 4 - Autoridade" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Package Section -->
     <section class="compact">
